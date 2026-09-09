@@ -24,6 +24,7 @@ const projects = [
     github: "https://github.com/Grandhisrikar2005",
     featured: true,
   },
+
   {
     number: "02",
     title: "AI Bio-Acoustic Birdsong Translator & Synthesizer",
@@ -38,9 +39,11 @@ const projects = [
       "AI",
     ],
     icon: Brain,
-    github: "https://github.com/Grandhisrikar2005",
+    github: "https://github.com/Grandhisrikar2005/AVIARA",
+    liveDemo: "https://aviara.streamlit.app/",
     featured: false,
   },
+
   {
     number: "03",
     title: "AI Document Summarizer",
@@ -173,7 +176,6 @@ export default function Projects() {
 
                   {/* Content */}
                   <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-
                     <div>
                       <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">
                         {project.category}
@@ -200,18 +202,34 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    {/* View Project */}
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex w-fit items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-purple-400/30 hover:bg-purple-500/10 hover:text-white"
-                    >
-                      View Project
+                    {/* Project Links */}
+                    <div className="flex flex-wrap gap-3">
 
-                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </a>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-fit items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-purple-400/30 hover:bg-purple-500/10 hover:text-white"
+                      >
+                        GitHub
 
+                        <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </a>
+
+                      {project.liveDemo && (
+                        <a
+                          href={project.liveDemo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex w-fit items-center gap-3 rounded-full border border-purple-400/20 bg-purple-500/10 px-5 py-3 text-sm font-medium text-purple-200 transition-all duration-300 hover:border-purple-400/40 hover:bg-purple-500/20 hover:text-white"
+                        >
+                          Live Demo
+
+                          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </a>
+                      )}
+
+                    </div>
                   </div>
                 </div>
               </motion.article>
