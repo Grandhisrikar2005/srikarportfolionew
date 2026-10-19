@@ -1,3 +1,4 @@
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -10,37 +11,15 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <main className="bg-[#050505] text-white">
+    <main className="min-h-screen bg-[#050505] text-white">
       <Navbar />
-
-      <div id="hero">
-        <Hero />
-      </div>
-
-      <div id="about">
-        <About />
-      </div>
-
-      <div id="skills">
-        <Skills />
-      </div>
-
-      <div id="projects">
-        <Projects />
-      </div>
-
-      <div id="experience">
-        <Experience />
-      </div>
-
-      <div id="certifications">
-        <Certifications />
-      </div>
-
-      <div id="contact">
-        <Contact />
-      </div>
-
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Certifications />
+      <Contact />
       <Footer />
     </main>
   );

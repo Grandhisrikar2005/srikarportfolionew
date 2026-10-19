@@ -1,29 +1,138 @@
+
 @import "tailwindcss";
 
+/* ==========================================
+   SRIKAR PORTFOLIO — GLOBAL DESIGN SYSTEM
+   ========================================== */
+
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #ffffff;
+  background: #050505;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-background: #050505;
+  --color-surface: #0a0a0a;
+  --color-purple: #8b5cf6;
+  --color-purple-light: #a78bfa;
+  --color-blue: #60a5fa;
+  --color-text: #ffffff;
+  --color-muted: #a1a1aa;
+}
+
+/* Universal box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Base document */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  color-scheme: dark;
+  background: var(--color-background);
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  background: #050505;
-  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--color-background);
+  color: var(--color-text);
   font-family: Inter, system-ui, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-::selection {
-  background: #8b5cf6;
-  color: white;
-}
-html {
-  scroll-behavior: smooth;
-}
-
+/* Keep anchor navigation clear of the fixed navbar */
 section {
   scroll-margin-top: 100px;
+}
+
+/* Premium text selection */
+::selection {
+  background: rgba(139, 92, 246, 0.75);
+  color: #ffffff;
+}
+
+/* Subtle custom scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #49405f #080808;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #080808;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    #8b5cf6,
+    #4f46e5
+  );
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a78bfa;
+}
+
+/* Clear keyboard focus for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-purple-light);
+  outline-offset: 4px;
+}
+
+/* Images and media should scale within their containers */
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+/* Avoid unwanted default link styling */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Smooth button and link interactions */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Avoid horizontal overflow on narrow screens */
+@media (max-width: 480px) {
+  html {
+    scroll-padding-top: 88px;
+  }
+
+  section {
+    scroll-margin-top: 88px;
+  }
+}
+
+/* Respect reduced-motion accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
